@@ -1,25 +1,22 @@
 import { useState } from "react";
 import UserPost from "../../../UserController";
 import { SpinnerLoading } from "../../Utils/SpinnerLoading";
-import { App, UserList } from "./UserList";
-import { UsersColumnBar } from "./UsersColumnBar";
+import { VehicleColumnBar } from "./VehicleColumnBar";
 import { useLocation } from 'react-router-dom'
+import { VehicleList } from "./VehicleList";
 
-export function ControlPanel() {
+export function VehicleControlPanel() {
   const location = useLocation().pathname;
   const [refresh, setRefresh] = useState(false);
   if(refresh == false)
   {
     return (
       <>
-      <div>
-      <UsersColumnBar/>
-      <UserList path = {location}/>
-      </div>
-
-      <div>
+      <VehicleColumnBar/>
+      <br></br>
+      <VehicleList path = {location}/>
+      <br></br>
       <UserPost setRefresh = {setRefresh}/>
-      </div>
       </>
     );
   }
@@ -28,7 +25,7 @@ export function ControlPanel() {
     return (
       <>
         <SpinnerLoading/>
-        <UserPost setRefresh = {setRefresh}/>
+        <VehicleList setRefresh = {setRefresh}/>
       </>
     );
   }

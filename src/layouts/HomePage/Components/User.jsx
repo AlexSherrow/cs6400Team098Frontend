@@ -11,7 +11,8 @@ import './User.css';
 
     console.log(props);
 
-    return (      
+    return (     
+      <>
       <div
       > 
         <div class = 'left'
@@ -31,6 +32,8 @@ import './User.css';
         >{props.lastName} </div>
         
       </div>
+      <br></br>
+      </> 
     );
     
   }
